@@ -4,7 +4,6 @@ from django.http import HttpResponse
 from .models import Greeting
 
 def index(request):
-    print(r.text)
     print(request)
     return HttpResponse('aaaaaa')
 
