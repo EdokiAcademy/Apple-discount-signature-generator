@@ -4,8 +4,8 @@ from django.http import HttpResponse
 from .models import Greeting
 
 def index(request):
-    print(request)
-    return HttpResponse('aaaaaa')
+    print request.GET["test"]
+    return HttpResponse(request)
 
 
 def db(request):
