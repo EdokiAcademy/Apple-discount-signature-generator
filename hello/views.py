@@ -15,7 +15,7 @@ def index(request):
     #payload = request.POST["signature"]
     payload = "com.edokicademy.montessoriacademy_K93Z7MT4A2_subscriptionForAYear_50ME_Montessori_1f83d05c-83d1-497e-afad-5d0c4c14bc75_1554909568808"
     curdir = os.path.abspath(os.curdir)
-    with open(os.path.join(curdir,"cert.der"), "rb") as myfile:
+    with open("./cert.der", "rb") as myfile:
         der = myfile.read()
         signing_key = SigningKey.from_der(der)
         signature = signing_key.sign(payload.encode("utf-8"),hashfunc=hashlib.sha256,sigencode=sigencode_der)
