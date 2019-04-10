@@ -1,3 +1,7 @@
+from django.shortcuts import render
+from django.http import HttpResponse
+
+from .models import Greeting
 import json
 import uuid
 import time
@@ -5,11 +9,8 @@ import hashlib
 import base64
 import os
 import django_heroku
-
 from ecdsa import SigningKey
-from ecdsa.util import sigencode_derfrom django.shortcuts import render
-from django.http import HttpResponse
-from .models import Greeting
+from ecdsa.util import sigencode_der
 
 def index(request):
     #payload = request.POST["signature"]
