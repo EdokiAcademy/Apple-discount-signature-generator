@@ -10,8 +10,14 @@ import base64
 import os
 from ecdsa import SigningKey
 from ecdsa.util import sigencode_der
+import sys
 
 def index(request):
+    print('sys.argv[0] =', sys.argv[0])             
+    pathname = os.path.dirname(sys.argv[0])        
+    print('path =', pathname)
+    print('full path =', os.path.abspath(pathname)) 
+
     #payload = request.POST["signature"]
     payload = "com.edokicademy.montessoriacademy_K93Z7MT4A2_subscriptionForAYear_50ME_Montessori_1f83d05c-83d1-497e-afad-5d0c4c14bc75_1554909568808"
     curdir = os.path.abspath(os.curdir)
