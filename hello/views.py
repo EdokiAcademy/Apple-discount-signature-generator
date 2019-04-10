@@ -21,7 +21,7 @@ def index(request):
         signature = signing_key.sign(payload.encode("utf-8"),hashfunc=hashlib.sha256,sigencode=sigencode_der)
         encoded_signature = base64.b64encode(signature)
         encoded_signature = str(encoded_signature, "utf-8")
-        return HttpResponse(request)
+        return HttpResponse(encoded_signature)
 
 def db(request):
 
