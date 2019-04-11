@@ -13,7 +13,7 @@ from ecdsa import SigningKey
 from ecdsa.util import sigencode_der
 
 def index(request):
-    if request.POST["signature"] is None:
+    if 'signature' not in request.POST:
         return HttpResponse("Hey, manque une signature en POST");
     else:
         payload = request.POST["signature"]
