@@ -1,7 +1,6 @@
 from django.shortcuts import render
 from django.http import HttpResponse
 
-from .models import Greeting
 import json
 import uuid
 import time
@@ -26,10 +25,4 @@ def index(request):
             return HttpResponse(encoded_signature)
 
 def db(request):
-
-    greeting = Greeting()
-    greeting.save()
-
-    greetings = Greeting.objects.all()
-
-    return render(request, "db.html", {"greetings": greetings})
+    return render(request, "db.html", {"greetings": ""})
